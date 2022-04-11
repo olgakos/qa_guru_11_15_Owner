@@ -2,8 +2,7 @@ package qa.guru.lesson_15.config;
 
 import org.aeonbits.owner.Config;
 
-
-@Config.Sources({"classpath:lesson_15/${typeProperties}.properties"})
+@Config.Sources({"classpath:${typeProperties}.properties"})
 public interface WebDriverConfig extends Config {
 
     @Key("browserName")

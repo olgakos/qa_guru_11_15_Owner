@@ -19,6 +19,5 @@ public class WebTest extends TestBase {
             $$("ul.repo-list").first().shouldHave(text("olgakos"));
             sleep(1000);
         });
-
     }
 }

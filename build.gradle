@@ -26,22 +26,19 @@ allure {
     }
 }
 dependencies {
-    implementation 'com.github.olgakos:recursive-assertion-assertj:1.0.1' // GitHub
     testImplementation(
             'org.aspectj:aspectjweaver:1.9.9',
-            "com.codeborne:selenide:$selenideVersion",
+            "org.aeonbits.owner:owner:1.0.12",
+            'org.assertj:assertj-core:3.22.0',
+            "com.codeborne:selenide:6.3.5",
             "io.qameta.allure:allure-selenide:$allureVersion",
-            'io.rest-assured:rest-assured:4.5.1',
-            'org.aeonbits.owner:owner:1.0.12', // owner
-            'io.github.bonigarcia:webdrivermanager:5.1.0',
-            "io.qameta.allure:allure-rest-assured:$allureVersion",
-            "org.aeonbits.owner:owner:1.0.12", // owner2
-            "org.assertj:assertj-core:3.22.0",
             "org.junit.jupiter:junit-jupiter:$junitVersion",
-            "org.junit.jupiter:junit-jupiter-api:$junitVersion")
+            "io.rest-assured:rest-assured:4.5.1"
+    )
     testRuntimeOnly(
             "org.slf4j:slf4j-simple:$slf4jVersion",
-            "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+            "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+    )
 }
 
 tasks.withType(JavaCompile) {
@@ -71,4 +68,5 @@ tasks.withType(Test) {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
+    }
 }
