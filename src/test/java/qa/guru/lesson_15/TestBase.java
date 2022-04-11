@@ -22,16 +22,17 @@ public class TestBase {
     }
 
     @AfterEach
+    @DisplayName("Формирование артефактов тестирования")
     public void tearDown() {
         String sessionId = DriverUtils.getSessionId();
 
-        AllureAttachments.addScreenshotAs("Last screenshot"); //записать скрин
+        AllureAttachments.addScreenshotAs("Last screenshot"); //скриншот
         AllureAttachments.addPageSource();
         AllureAttachments.addBrowserConsoleLogs();
         Selenide.closeWebDriver();
 
         if (Project.isVideoOn()) {
-            AllureAttachments.addVideo(sessionId); // добавить видео
+            AllureAttachments.addVideo(sessionId); // записать видео
         }
 
     }
