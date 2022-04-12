@@ -26,6 +26,4 @@ public interface WebDriverConfig extends Config {
 
     @Key("timeout")
     int timeout();
-
-
 }
